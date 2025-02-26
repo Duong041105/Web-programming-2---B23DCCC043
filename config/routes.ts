@@ -42,6 +42,13 @@
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
 	},
+	{
+		path: '/Random-Number',
+		name: 'RandomNumber',
+		icon: 'QuestionOutlined',
+		component: './RandomNumber',
+	},
+
 
 	// DANH MUC HE THONG
 	// {
