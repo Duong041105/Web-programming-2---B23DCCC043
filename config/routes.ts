@@ -48,6 +48,18 @@
 		icon: 'QuestionOutlined',
 		component: './RandomNumber',
 	},
+	{
+		path: '/Manage-Catalog',
+		name: 'ManageCatalog',
+		icon: 'AlignCenterOutlined',
+		component: './ManageCatalog',
+	},
+	{
+		path: '/Learning-Progress',
+		name: 'LearningProgress',
+		icon: 'HistoryOutlined',
+		component: './LearningProgress',
+	},
 
 
 	// DANH MUC HE THONG
