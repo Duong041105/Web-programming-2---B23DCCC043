@@ -1,0 +1,100 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #8E44AD);
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.text-white {
+    color: white;
+}
+
+
+button {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+
+.w-80 {
+    width: 320px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}
+
+.mt-6 {
+    margin-top: 24px;
+}
+
+
+.bg-white {
+    background-color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.rounded-lg {
+    border-radius: 10px;
+}
+
+.shadow-lg {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bordered {
+    border: 1px solid #ddd;
+}
+
+.w-80 {
+    width: 320px;
+}
+
+
+.list-item {
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.list-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.history-list {
+    max-height: 300px; /* Giới hạn chiều cao */
+    overflow-y: auto;  /* Hiện thanh cuộn khi danh sách quá dài */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

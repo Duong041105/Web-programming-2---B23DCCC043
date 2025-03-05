@@ -4,10 +4,10 @@ const LearningProgress = () => {
   const [schedule, setSchedule] = useState([]);
   const [formData, setFormData] = useState({ subject: "", date: "", time: "", duration: "", content: "", note: "" });
   const [editIndex, setEditIndex] = useState(null);
-  const [monthlyGoal, setMonthlyGoal] = useState(0); // Mục tiêu học tập theo tháng
-  const [totalHours, setTotalHours] = useState(0); // Tổng số giờ đã học
+  const [monthlyGoal, setMonthlyGoal] = useState(0); 
+  const [totalHours, setTotalHours] = useState(0); 
 
-  // Load dữ liệu từ localStorage
+  
   useEffect(() => {
     const storedSchedule = JSON.parse(localStorage.getItem("learningSchedule")) || [];
     const storedGoal = JSON.parse(localStorage.getItem("monthlyGoal")) || 0;
@@ -16,7 +16,7 @@ const LearningProgress = () => {
     calculateTotalHours(storedSchedule);
   }, []);
 
-  // Lưu vào localStorage
+  
   const saveToLocalStorage = (data) => {
     localStorage.setItem("learningSchedule", JSON.stringify(data));
     setSchedule(data);
@@ -28,9 +28,9 @@ const LearningProgress = () => {
     setMonthlyGoal(goal);
   };
 
-  // Tính tổng số giờ đã học trong tháng
+  
   const calculateTotalHours = (data) => {
-    const currentMonth = new Date().getMonth() + 1; // Lấy tháng hiện tại
+    const currentMonth = new Date().getMonth() + 1; 
     const hours = data.reduce((total, item) => {
       const itemMonth = new Date(item.date).getMonth() + 1;
       return itemMonth === currentMonth ? total + parseFloat(item.duration || 0) : total;
@@ -38,12 +38,12 @@ const LearningProgress = () => {
     setTotalHours(hours);
   };
 
-  // Xử lý thay đổi input
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Lưu lịch học
+  
   const handleSave = () => {
     if (!formData.subject || !formData.date || !formData.time || !formData.duration) return alert("Nhập đủ thông tin!");
 
@@ -56,7 +56,7 @@ const LearningProgress = () => {
     setEditIndex(null);
   };
 
-  // Xóa lịch học
+  
   const handleDelete = (index) => {
     const updatedSchedule = schedule.filter((_, i) => i !== index);
     saveToLocalStorage(updatedSchedule);
@@ -66,9 +66,9 @@ const LearningProgress = () => {
     <div style={styles.container}>
       <h2 style={styles.title}> Quản lý tiến độ học tập</h2>
 
-      {/* Thiết lập mục tiêu học tập */}
+      
       <div style={styles.goalContainer}>
-        <h3>🎯 Mục tiêu học tập tháng</h3>
+        <h3> Mục tiêu học tập tháng</h3>
         <input
           type="number"
           placeholder="Nhập số giờ mong muốn"
@@ -82,7 +82,7 @@ const LearningProgress = () => {
         </p>
       </div>
 
-      {/* Form nhập liệu */}
+      
       <div style={styles.formContainer}>
         <input type="text" name="subject" placeholder="Môn học" value={formData.subject} onChange={handleChange} style={styles.input} />
         <input type="date" name="date" value={formData.date} onChange={handleChange} style={styles.input} />
@@ -95,7 +95,7 @@ const LearningProgress = () => {
         </button>
       </div>
 
-      {/* Danh sách lịch học */}
+      
       <ul style={styles.scheduleList}>
         {schedule.map((item, index) => (
           <li key={index} style={styles.scheduleItem}>
@@ -115,7 +115,7 @@ const LearningProgress = () => {
   );
 };
 
-// 🖌️ **CSS Styles**
+
 const styles = {
   container: {
     maxWidth: "500px",

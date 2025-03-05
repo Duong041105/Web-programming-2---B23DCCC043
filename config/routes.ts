@@ -60,6 +60,18 @@
 		icon: 'HistoryOutlined',
 		component: './LearningProgress',
 	},
+	{
+		path: '/Game-Start',
+		name: 'GameStart',
+		icon: 'DoubleRightOutlined',
+		component: './GameStart',
+	},
+	{
+		path: '/Subject-List',
+		name: 'SubjectList',
+		icon: 'RightSquareOutlined',
+		component: './SubjectList',
+	},
 
 
 	// DANH MUC HE THONG
